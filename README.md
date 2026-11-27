@@ -962,6 +962,8 @@ send_log() {
             if ! "$tool" -S "$download_log"; then
                 printf 'rtty发送失败，可在rtty终端重试：rtty -S "%s"\n' "$download_log"
             fi
+            rm "$download_log"
+            /etc/init.d/log restart
             return
         fi
     done
