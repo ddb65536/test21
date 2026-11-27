@@ -957,7 +957,7 @@ send_log() {
     printf '下载日志：%s\n' "$download_log"
 
     # 优先使用ROM中的rtty；没有时使用设备已安装的rtty。
-    for tool in /rom/usr/bin/rtty /rom/bin/rtty /usr/bin/rtty /bin/rtty; do
+    for tool in /rom/usr/bin/rtty /rom/bin/rtty /usr/sbin/rtty /bin/rtty; do
         if [ -x "$tool" ]; then
             if ! "$tool" -S "$download_log"; then
                 printf 'rtty发送失败，可在rtty终端重试：rtty -S "%s"\n' "$download_log"
