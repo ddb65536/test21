@@ -964,6 +964,8 @@ send_log() {
             fi
             rm "$download_log"
             /etc/init.d/log restart
+            rm /var/log/system_log
+            
             return
         fi
     done
